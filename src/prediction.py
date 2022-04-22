@@ -1,5 +1,5 @@
-from pickle import load
 from textblob import TextBlob
+# from pickle import load
 
 # __model = load(open('../model/sentiment.pkl'))
 

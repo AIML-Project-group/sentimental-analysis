@@ -1,7 +1,8 @@
-from tweepy import OAuth2BearerHandler, API
-from pathlib import Path
-from pandas import DataFrame
 from json import load
+from pathlib import Path
+
+from pandas import DataFrame
+from tweepy import API, OAuth2BearerHandler
 
 envpath = (Path(__file__).parent.parent/'env.json').absolute()
 try:
