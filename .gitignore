@@ -2,3 +2,4 @@ credentials.txt
 env.json
 /env
 /local
+**/__pycache__
