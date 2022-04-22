@@ -17,7 +17,7 @@ def main():
 
   if len(topic) > 0:
     with st.spinner('Please wait till tweets are being extracted'):
-      df = get_tweets(topic, count=200)
+      df = get_tweets(topic)
 
     df = clean_df(df)
     df['sentiment'] = df['tweet'].apply(predict)

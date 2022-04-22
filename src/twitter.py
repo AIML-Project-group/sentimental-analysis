@@ -9,9 +9,6 @@ try:
 except FileNotFoundError:
   env = {}
 
-print(envpath)
-print(env)
-
 auth = OAuth2BearerHandler(env.get('bearer_token'))
 api = API(auth)
 
@@ -19,11 +16,13 @@ def get_api():
   global api
   return api
 
-def get_tweets(topic, count=50):
+def get_tweets(topic):
   global api
   topic = f'{topic} -filter:retweets'
   df = DataFrame(columns=['date', 'user', 'is_verified', 'tweet', 'likes', 'retweets', 'user_location'])
-  for i, tweet in enumerate(api.search_tweets(topic, lang='en', count=count, tweet_mode='extended')):
+  
+  # Twitter returns max 100 tweets per query
+  for i, tweet in enumerate(api.search_tweets(topic, lang='en', count=100, tweet_mode='extended')):
     df.loc[i, 'date'] = tweet.created_at
     df.loc[i, 'user'] = tweet.user.name
     df.loc[i, 'is_verified'] = tweet.user.verified

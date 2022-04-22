@@ -4,7 +4,13 @@ A webapp to visualize sentiment on a given topic as per recent tweets.
 
 
 - [Twitter Sentiment Analysis](#twitter-sentiment-analysis)
+  - [Pre-requisites](#pre-requisites)
   - [Running Locally](#running-locally)
+
+## Pre-requisites
+- Install [Python3](https://python.org)
+- Get your twitter bearer token from https://developer.twitter.com/
+- Rename `env.example.json` to `env.json` and change `paste-your-token-here` with the *Actual bearer token*
 
 ## Running Locally
   - Create a new virtual environment
