@@ -3,3 +3,4 @@ env.json
 /env
 /local
 **/__pycache__
+model/*.pkl
